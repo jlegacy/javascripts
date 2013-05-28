@@ -1,0 +1,16 @@
+$apiSecret = "XmyWk+xXlVe/n9T8ctuAXuWOgsoNA8qB1cCzZkzNWFsUyHvqZoHvXybfYMQkW+f4U0Q/aGxgfJ1O/ebz8yGvMg==";
+$apikey = "7f59c3ba-b42b-42ba-92b4-2ba3b8cbce7e";
+$nonce = explode(' ', microtime(false));
+$nonce = $nonce[1].substr($nonce[0], 2, 6);
+$id = md5($nonce); // id can be anything to recognize this call
+$query = array('call' => $call, 'params' => $params, 'item' => $item, 'currency' => $currency, 'id' => $id, 'nonce' => $nonce);
+$query = json_encode($query);
+// generate signature
+echo base64_decode('test');
+$sign = hash_hmac('sha512', $query, base64_decode($apiSecret), true);
+// prefix signature to query
+$query = pack('H*', str_replace('-','',$apiKey)).$sign.$query;
+echo($query);
+// send query
+$call = array('op' => 'call', 'call' => base64_encode($query), 'id' => $id, 'context' => 'mtgox.com');
+echo base64_encode($query);

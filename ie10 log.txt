@@ -1,0 +1,8 @@
+A02-6832 - Invoicing
+- Incorrect creation/use of Model
+
+A02-6843 - Reporting
+- Dancik Wait Screen Not Showing/No opacity
+- On x&Y reports, screen not refreshing "more Email label" in when selecting 5 more emails
+- event.stop not working in DWS causing characters to be entered in digit field (1.7.1 fixed)
+- Not showing red background when wrong input
